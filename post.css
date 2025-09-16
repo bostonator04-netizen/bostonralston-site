@@ -1,0 +1,5 @@
+
+.container{max-width:760px;margin:40px auto;padding:0 16px;font:16px/1.6 Inter,system-ui}
+body{background:#0b0c10;color:#e6e7ea}
+a{color:#7c9cff;text-decoration:none}
+article{background:#111318;border:1px solid rgba(230,231,234,.12);border-radius:16px;padding:24px}
