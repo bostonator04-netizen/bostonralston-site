@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boston Ralston — Portfolio & Creator Hub</title>
+  <meta name="description" content="Portfolio, projects, and creator hub for Boston Ralston — videography, editing, business/finance student, and content creation." />
+  <meta name="author" content="Boston Ralston" />
+  <meta property="og:title" content="Boston Ralston — Portfolio & Creator Hub" />
+  <meta property="og:description" content="My work, services, and content all in one place." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-image.jpg" />
+  <meta property="og:url" content="https://example.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <style>
+    :root{
+      --bg: #0b0c10; --card:#111318; --text:#e6e7ea; --muted:#a9aeb8;
+      --brand:#7c9cff; --brand-2:#5de4c7; --radius:16px; --shadow:0 8px 30px rgba(0,0,0,.25);
+    }
+    @media (prefers-color-scheme: light){ :root{ --bg:#f7f8fb; --card:#fff; --text:#121319; --muted:#5c6470; } }
+    *{box-sizing:border-box} html,body{margin:0;padding:0}
+    body{background: radial-gradient(1200px 600px at 80% -10%, rgba(124,156,255,.15), transparent 60%), radial-gradient(900px 500px at -10% 20%, rgba(93,228,199,.12), transparent 60%), var(--bg); color:var(--text); font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;backdrop-filter: blur(12px); background: color-mix(in oklab, var(--bg) 85%, transparent); border-bottom:1px solid color-mix(in oklab, var(--text) 10%, transparent); z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand img{width:36px;height:36px;border-radius:50%;object-fit:cover; box-shadow: var(--shadow)}
+    .nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    .nav a{padding:8px 12px;border-radius:10px}
+    .nav a:hover{background: color-mix(in oklab, var(--text) 10%, transparent)}
+    .menu-btn{display:none}
+    .hero{padding:72px 0 30px}
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .kicker{letter-spacing:.25em;color:var(--muted);text-transform:uppercase;font-size:12px}
+    h1{font-size:48px;line-height:1.1;margin:10px 0 16px}
+    .lead{font-size:18px;color:var(--muted)}
+    .cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid color-mix(in oklab, var(--text) 12%, transparent);transition:.2s ease}
+    .btn.primary{background:linear-gradient(135deg, var(--brand), var(--brand-2));color:#081016;border:none}
+    .taglist{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    .tag{font-size:12px;color:var(--muted);padding:6px 10px;border-radius:999px;border:1px dashed color-mix(in oklab, var(--text) 10%, transparent)}
+    .card{background:var(--card);border:1px solid color-mix(in oklab, var(--text) 10%, transparent);border-radius:var(--radius);box-shadow: var(--shadow)}
+    .avatar-card{padding:16px;display:grid;gap:12px}
+    .avatar{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius)}
+    .quick-links{display:grid;grid-template-columns:1fr;gap:10px}
+    .quick-links a{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:12px;border:1px solid color-mix(in oklab, var(--text) 10%, transparent)}
+    section{padding:40px 0}
+    .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .section-head h2{margin:0;font-size:28px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .project{padding:14px}
+    .thumb{border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:linear-gradient(135deg, color-mix(in oklab, var(--brand) 35%, #000), color-mix(in oklab, var(--brand-2) 25%, #000));display:flex;align-items:center;justify-content:center;font-weight:700}
+    .project h3{margin:10px 0 6px;font-size:18px}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+    .links-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .link-tile{padding:14px;border-radius:12px;border:1px solid color-mix(in oklab, var(--text) 10%, transparent);display:flex;flex-direction:column;gap:6px}
+    .link-tile strong{font-size:15px}
+    .link-tile span{color:var(--muted);font-size:13px}
+    .embed{border-radius:12px;overflow:hidden;border:1px solid color-mix(in oklab, var(--text) 10%, transparent)}
+    .embed iframe{width:100%;height:320px;border:0}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .about p{margin:0}
+    .contact-card{padding:16px;display:grid;gap:10px}
+    .inline{display:flex;gap:10px;flex-wrap:wrap}
+    .input{flex:1;min-width:220px;padding:12px 14px;border-radius:10px;border:1px solid color-mix(in oklab, var(--text) 15%, transparent);background:transparent;color:var(--text)}
+    footer{padding:24px 0;color:var(--muted);font-size:14px}
+    @media (max-width:900px){ .hero-inner{grid-template-columns:1fr} .grid{grid-template-columns:1fr 1fr} .links-grid{grid-template-columns:1fr 1fr} .about{grid-template-columns:1fr} }
+    @media (max-width:600px){ h1{font-size:36px} .grid{grid-template-columns:1fr} .links-grid{grid-template-columns:1fr} .nav ul{display:none} .menu-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid color-mix(in oklab, var(--text) 12%, transparent);border-radius:10px} .nav.open ul{display:flex;flex-direction:column;position:absolute;top:60px;left:20px;right:20px;background:var(--card);padding:10px;border:1px solid color-mix(in oklab, var(--text) 10%, transparent);border-radius:12px} }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Boston Ralston",
+    "url": "https://example.com",
+    "sameAs": [
+      "https://www.youtube.com/channel/UCgPDBDcxAc2mtl3c_yXVcfA",
+      "https://instagram.com/bostonralstonn",
+      "https://tiktok.com/@bostonralstonn"
+    ],
+    "jobTitle": "Videographer & Editor",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "University of Oregon" }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav" id="nav">
+      <a class="brand" href="#home">
+        <img src="/assets/avatar.jpg" alt="Boston Ralston" />
+        <span>Boston Ralston</span>
+      </a>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')">☰ Menu</button>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#content">Content</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/admin/">✎ Edit</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker">Portfolio • Creator Hub</div>
+          <h1>Videography, editing, and business-minded content — all in one place.</h1>
+          <p class="lead">I’m Boston, a Finance student and content creator in Eugene, OR. I shoot, edit, and package stories for TikTok, YouTube, and brands. Here’s my latest work and where to find me.</p>
+          <div class="cta">
+            <a class="btn primary" href="#work">View Portfolio</a>
+            <a class="btn" href="#content">Watch Content</a>
+            <a class="btn" href="#contact">Work With Me</a>
+          </div>
+          <div class="taglist">
+            <span class="tag">Videography</span>
+            <span class="tag">Editing</span>
+            <span class="tag">TikTok/YouTube</span>
+            <span class="tag">Business & Finance</span>
+          </div>
+        </div>
+        <div class="card avatar-card">
+          <img class="avatar" src="/assets/cover.jpg" alt="Hero cover" />
+          <div class="quick-links">
+            <a href="https://www.youtube.com/channel/UCgPDBDcxAc2mtl3c_yXVcfA" target="_blank" rel="noopener">
+              <div><strong>YouTube</strong><small>@BostonRalston</small></div><span>↗</span>
+            </a>
+            <a href="https://tiktok.com/@bostonralstonn" target="_blank" rel="noopener">
+              <div><strong>TikTok</strong><small>@bostonralstonn</small></div><span>↗</span>
+            </a>
+            <a href="https://instagram.com/bostonralstonn" target="_blank" rel="noopener">
+              <div><strong>Instagram</strong><small>@bostonralstonn</small></div><span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work / Portfolio -->
+    <section id="work">
+      <div class="section-head">
+        <h2>Featured Work</h2>
+        <a class="btn" href="#contact">Book a Project</a>
+      </div>
+      <div id="projects" class="grid"></div>
+    </section>
+
+    <!-- Content Hub -->
+    <section id="content">
+      <div class="section-head">
+        <h2>Latest Content</h2>
+        <a class="btn" href="https://linktr.ee/bostonralstonn" target="_blank" rel="noopener">All Links</a>
+      </div>
+      <div class="grid">
+        <div class="card embed">
+          <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=BostonRalston" title="YouTube uploads" allowfullscreen></iframe>
+        </div>
+        <div class="card embed">
+          <iframe src="https://www.tiktok.com/embed/v2/@bostonralstonn" title="TikTok" allowfullscreen></iframe>
+        </div>
+        <div class="card">
+          <div class="links-grid" style="padding:12px">
+            <a class="link-tile" href="https://www.youtube.com/channel/UCgPDBDcxAc2mtl3c_yXVcfA" target="_blank" rel="noopener">
+              <strong>YouTube Channel</strong><span>Longer edits, tutorials</span>
+            </a>
+            <a class="link-tile" href="https://tiktok.com/@bostonralstonn" target="_blank" rel="noopener">
+              <strong>TikTok</strong><span>Daily short-form</span>
+            </a>
+            <a class="link-tile" href="https://instagram.com/bostonralstonn" target="_blank" rel="noopener">
+              <strong>Instagram</strong><span>Reels & BTS</span>
+            </a>
+            <a class="link-tile" href="#contact">
+              <strong>Hire Me</strong><span>Rates & bookings</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog">
+      <div class="section-head">
+        <h2>Posts</h2>
+        <a class="btn" href="/admin/">Write a Post</a>
+      </div>
+      <div id="post-list" class="grid"></div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-head"><h2>About</h2></div>
+      <div class="about">
+        <div class="card" style="padding:16px">
+          <p>Hey, I’m Boston — a junior at the University of Oregon studying Finance. I create vertical video content and short promos for small businesses and creators. My kit includes a Nikon D5600 and Canon Rebel T8i (aka “The Muse”), and I edit on <em>OverKillRig</em> (Ryzen 9 3900X + RTX 4070). I love fast, punchy edits that still tell a story.</p>
+        </div>
+        <div class="card" style="padding:16px">
+          <p><strong>What I do</strong></p>
+          <ul>
+            <li>Short-form packages (TikTok, Reels, YT Shorts)</li>
+            <li>Event coverage & highlight reels</li>
+            <li>Product B‑roll & promos</li>
+            <li>Basic color, captions, and sound design</li>
+          </ul>
+          <p><strong>Tools</strong>: DaVinci Resolve, CapCut, Canva, ChatGPT</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-head"><h2>Contact</h2><span style="color:var(--muted)">Response in 24h</span></div>
+      <div class="grid">
+        <div class="card contact-card">
+          <p>Interested in a project or collab? Reach out via email, or DM me on any platform.</p>
+          <div class="inline">
+            <input id="email" class="input" value="bostonator04@icloud.com" aria-label="Email address" readonly />
+            <button class="btn" onclick="copyEmail()">Copy</button>
+            <a class="btn primary" href="mailto:bostonator04@icloud.com?subject=Project%20Inquiry">Email Me</a>
+          </div>
+          <div class="taglist">
+            <span class="tag">Based in Eugene, OR</span>
+            <span class="tag">Available for freelance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="inline" style="justify-content:space-between">
+        <span>© <span id="year"></span> Boston Ralston</span>
+        <span><a href="#home">Back to top ↑</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    async function loadJSON(url){ const res = await fetch(url); return await res.json(); }
+    function copyEmail(){ const el = document.getElementById('email'); el.select(); el.setSelectionRange(0, 99999); document.execCommand('copy'); const prev = el.value; el.value = 'Copied!'; setTimeout(()=>{ el.value = prev; }, 900); }
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Render projects from /data/projects.json
+    loadJSON('/data/projects.json').then(items => {
+      const wrap = document.getElementById('projects');
+      wrap.innerHTML = items.map(p => `
+        <article class="card project">
+          <a class="thumb" href="${p.link || '#'}" aria-label="${p.title}">${p.coverText || 'Project'}</a>
+          <h3>${p.title}</h3>
+          <p>${p.description}</p>
+        </article>
+      `).join('');
+    }).catch(()=>{});
+
+    // Render posts list from /posts/index.json
+    loadJSON('/posts/index.json').then(list => {
+      const wrap = document.getElementById('post-list');
+      wrap.innerHTML = list.map(post => `
+        <article class="card project">
+          <a class="thumb" href="/posts/${post.slug}.html" aria-label="${post.title}">Post</a>
+          <h3>${post.title}</h3>
+          <p>${post.excerpt}</p>
+        </article>
+      `).join('');
+    }).catch(()=>{});
+  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Drop avatar.jpg, cover.jpg, og-image.jpg, and favicon.ico here.
